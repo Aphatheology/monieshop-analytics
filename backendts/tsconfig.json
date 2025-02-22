@@ -12,6 +12,6 @@
         "outDir": "./dist",
         "baseUrl": "./src"
     },
-    "include": ["src/**/*.ts"],
+    "include": ["src/**/*.ts", "keep/fileUpload.controller", "keep/fileUpload.route"],
     "exclude": ["node_modules"]
 }

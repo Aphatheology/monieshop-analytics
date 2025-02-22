@@ -3,6 +3,7 @@ import { fetchAnalytics, fetchDatasets } from "../api";
 import { Bar, Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js";
 import { setDatasets } from 'react-chartjs-2/dist/utils';
+import FileUpload from './FileUpload';
 
 Chart.register(...registerables);
 
@@ -36,6 +37,8 @@ const Analytics = () => {
   return (
     <div className="p-6">
       <h1 className="text-3xl font-bold text-center mb-6">Sales Analytics Dashboard</h1>
+
+      <FileUpload />
 
       <select
         value={selectedDataset}

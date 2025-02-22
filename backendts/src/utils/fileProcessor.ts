@@ -5,11 +5,11 @@ import Transaction from "../models/transaction.model";
 import ProcessedFile from "../models/processedFile.model";
 
 const processTransactionFile = async (filePath: string) => {
-  const fullPathParts = filePath.split(path.sep); // Split file path into parts
-  const subDir = fullPathParts[fullPathParts.length - 2]; // Extract subdirectory (e.g., "test-data-1")
-  const fileName = fullPathParts[fullPathParts.length - 1]; // Extract file name (e.g., "2025-01-01.txt")
+  const fullPathParts = filePath.split(path.sep); 
+  const subDir = fullPathParts[fullPathParts.length - 2]; 
+  const fileName = fullPathParts[fullPathParts.length - 1]; 
 
-  const fileDate = fileName.replace(".txt", ""); // Remove .txt to get just the date
+  const fileDate = fileName.replace(".txt", ""); 
 
   const fileContent = await fs.promises.readFile(filePath, "utf-8");
   const transactions = fileContent.split("\n").filter((line) => line.trim() !== "");
@@ -27,8 +27,8 @@ const processTransactionFile = async (filePath: string) => {
       });
 
     await Transaction.create({
-      file: subDir, // Store the subdirectory name
-      fileDate, // Store the file name without .txt
+      file: subDir, 
+      fileDate, 
       salesStaffId: parseInt(salesStaffId, 10),
       transactionTime: new Date(transactionTime),
       products,
@@ -69,12 +69,6 @@ export const processAllFiles = async (rootDir: string) => {
 
   console.log("✅ All files processed successfully!");
 };
-
-/**
- * Processes a single transaction file line by line and inserts data into MongoDB.
- * @param filePath Path to the transaction file
- */
-// export const processTransactionFile = async (filePath: string) => {
 //   const fileStream = fs.createReadStream(filePath);
 //   const rl = readline.createInterface({
 //     input: fileStream,
