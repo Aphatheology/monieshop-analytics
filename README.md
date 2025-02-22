@@ -1,3 +1,7 @@
+# TODO
+- Cache result of persisted test-data
+- Allow uploading of new data by end users with or without persisting 
+
 # monieshop-analytics
 Monieshop is a supermarket that sells different products to its customers. It uses a digital accounting system to track its sales transactions.
 The digital accounting system uses text files to store transaction data. Here is a brief description of the file format:
