@@ -6,7 +6,7 @@ import analyticsRoute from './routes/analytics.route';
 dotenv.config();
 const app = express();
 
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = ["http://localhost:3000", "https://monieshop-analytics.vercel.app/"];
 
 app.use(
   cors({
